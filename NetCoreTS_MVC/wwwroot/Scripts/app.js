@@ -7,19 +7,24 @@ var UserList = (function () {
         var _this = this;
         $.getJSON('http://localhost:55562/Home/GetUsers', function (data) {
             _this.users = data;
-            alert('данные загружены');
+            if (_this.users == null)
+                alert('пользователей загрузить не удалось');
+            else
+                alert('данные загружены');
         });
     };
     UserList.prototype.displayUsers = function () {
         var table = '<table class="table">';
-        for (var i = 0; i < this.users.length; i++) {
+        console.log(this.users);
+        this.users.forEach(function (item, i, arr) {
             var tableRow = '<tr>' +
-                '<td>' + this.users[i].Id + '</td>' +
-                '<td>' + this.users[i].Name + '</td>' +
-                '<td>' + this.users[i].Age + '</td>' +
+                '<td>' + item.id + '</td>' +
+                '<td>' + item.name + '</td>' +
+                '<td>' + item.age + '</td>' +
                 '</tr>';
             table += tableRow;
-        }
+            console.log(item);
+        });
         table += '</table>';
         $('#content').html(table);
     };
