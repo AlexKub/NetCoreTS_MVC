@@ -5,7 +5,7 @@ var UserList = (function () {
     }
     UserList.prototype.load = function () {
         var _this = this;
-        $.getJSON('http://localhost:55562/Home/GetUsers', function (data) {
+        $.getJSON('http://localhost:21204/Home/GetUsers', function (data) {
             _this.users = data;
             alert('данные загружены');
         });
@@ -35,3 +35,4 @@ window.onload = function () {
     $("#loadBtn").click(function () { userList.load(); });
     $("#displayBtn").click(function () { userList.displayUsers(); });
 };
+//# sourceMappingURL=app.js.map

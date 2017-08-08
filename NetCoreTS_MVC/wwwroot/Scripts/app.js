@@ -5,26 +5,21 @@ var UserList = (function () {
     }
     UserList.prototype.load = function () {
         var _this = this;
-        $.getJSON('http://localhost:55562/Home/GetUsers', function (data) {
+        $.getJSON('http://localhost:21204/Home/GetUsers', function (data) {
             _this.users = data;
-            if (_this.users == null)
-                alert('пользователей загрузить не удалось');
-            else
-                alert('данные загружены');
+            alert('данные загружены');
         });
     };
     UserList.prototype.displayUsers = function () {
         var table = '<table class="table">';
-        console.log(this.users);
-        this.users.forEach(function (item, i, arr) {
+        for (var i = 0; i < this.users.length; i++) {
             var tableRow = '<tr>' +
-                '<td>' + item.id + '</td>' +
-                '<td>' + item.name + '</td>' +
-                '<td>' + item.age + '</td>' +
+                '<td>' + this.users[i].Id + '</td>' +
+                '<td>' + this.users[i].Name + '</td>' +
+                '<td>' + this.users[i].Age + '</td>' +
                 '</tr>';
             table += tableRow;
-            console.log(item);
-        });
+        }
         table += '</table>';
         $('#content').html(table);
     };
@@ -40,3 +35,4 @@ window.onload = function () {
     $("#loadBtn").click(function () { userList.load(); });
     $("#displayBtn").click(function () { userList.displayUsers(); });
 };
+//# sourceMappingURL=app.js.map

@@ -1,4 +1,4 @@
-﻿/// <reference path="typings/jquery/jquery.d.ts" />
+/// <reference path="typings/jquery/jquery.d.ts" />
 
 class UserList {
 
@@ -6,13 +6,10 @@ class UserList {
 
     load(): void {
 
-        $.getJSON('http://localhost:55562/Home/GetUsers',
+        $.getJSON('http://localhost:21204/Home/GetUsers',
             (data) => {
                 this.users = data;
-                if (this.users == null)
-                    alert('пользователей загрузить не удалось');
-                else
-                    alert('данные загружены');
+                alert('данные загружены');
 
             });
     }

@@ -66,28 +66,23 @@
 </div>
 
 <div class="row">
-    <div class="col-md-3">
-        <h2>Application uses</h2>
-        <ul>
-            <li>Sample pages using ASP.NET Core MVC</li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=518004">Bower</a> for managing client-side libraries</li>
-            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>How to</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398600">Add a Controller and View</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699315">Manage User Secrets using Secret Manager.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699316">Use logging to log a message.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699317">Add packages using NuGet.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699318">Add client packages using Bower.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699319">Target development, staging or production environment.</a></li>
-        </ul>
-    </div>
-    <div class="col-md-4">
-        <h2>Test column</h2>
-        <div id="content"></div>
-        <button class="btn" id="loadBtn">Загрузить</button><button class="btn" id="displayBtn">Показать</button>
-    </div>
+    <h2>Подгрузка данных из контролллера</h2>
+    <div id="content"></div>
+    <button class="btn" id="loadBtn">Загрузить</button>
+    <button class="btn" id="displayBtn">Показать</button>
+
+    @section scripts{
+        <script src='@Url.Content("~/Scripts/app.js")'></script>
+    }
+</div>
+
+<div class="row">
+    <h2>Приветствие</h2>
+    <div id="greeter-div"></div>
+
+    
+
+    @section scripts{
+        <script src='@Url.Content("~/Scripts/greeter.js")'></script>
+    }
 </div>
